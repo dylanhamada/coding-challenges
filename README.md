@@ -41,6 +41,10 @@ The console will display the problem and solution to the challenge.
 
 Detailed information about the solution can be found within the JS file itself.
 
+**Alternatively**, you can copy the function code, open the browser console, and paste the code. Then, call the function with your own arguments within a console.log call, like this:
+
+`console.log(exerciseFunc(arguments));`
+
 ## Algorithms Challenges
 
 <details>
