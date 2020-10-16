@@ -91,3 +91,47 @@ I then call the sym function recursively, each time omitting the first two array
         return sym(newArr, ...args.slice(2));
     };
 </details>
+
+<details>
+    <summary>Inventory Update</summary>
+
+**Challenge**
+
+Compare and update the inventory stored in a 2D array against a second 2D array of a fresh delivery. Update the current existing inventory item quantities (in arr1). If an item cannot be found, add the new item and quantity into the inventory array. The returned inventory array should be in alphabetical order by item.
+
+**Solution**
+
+My approach is to iterate through the second array, each iteration also iterating through the first array. If the item names match, I increase the item quantity in array 1.
+
+If the item name from the second array doesn't match, I add that item to array 1. Then I sort array 1 alphabetically.
+
+**Code**
+
+    const updateInventory = (arr1, arr2) => {
+        arr2.forEach(arrTwoEl => {
+            let newItem = true;
+
+            arr1.forEach(arrOneEl => {
+                if (arrOneEl[1] === arrTwoEl[1]) {
+                    arrOneEl[0] += arrTwoEl[0];
+                    newItem = false;
+                }
+            });
+
+            if (newItem) {
+                arr1.push(arrTwoEl);
+            }
+        });
+
+        arr1.sort((a, b) => {
+            if (a[1] < b[1]) {
+                return -1;
+            } else if (a[1] < b[1]) {
+                return 1;
+            }
+            return 0;
+        });
+
+        return arr1;
+    };
+</details>

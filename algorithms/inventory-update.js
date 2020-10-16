@@ -7,25 +7,29 @@ order by item. */
 
 // SOLUTION
 
-/* Iterate through array 2, with each iteration also iterating through array 1 to check if the second element 
-in the nested array of array 2 matches the one in array 1. Then...? */
-
 const updateInventory = (arr1, arr2) => {
+    // Iterate through array 2
     arr2.forEach(arrTwoEl => {
-        let newItem = false;
+        // Variable to denote whether an item in array 2 is present in array 1
+        let newItem = true;
 
+        // Iterate through array 1
         arr1.forEach(arrOneEl => {
+            /* If the item names of the current elements in both arrays match, increase the quantity
+            in array 1 by quantity in array 2 */
             if (arrOneEl[1] === arrTwoEl[1]) {
-                arrOneEl += arrTwoEl[0];
-                newItem = true;
+                arrOneEl[0] += arrTwoEl[0];
+                newItem = false;
             }
         });
 
-        if (!newItem) {
+        // If item in array 2 is not present in array 1, add the item to array 1
+        if (newItem) {
             arr1.push(arrTwoEl);
         }
     });
 
+    // Sort array 1 alphabetically by item name
     arr1.sort((a, b) => {
         if (a[1] < b[1]) {
             return -1;
@@ -35,7 +39,7 @@ const updateInventory = (arr1, arr2) => {
         return 0;
     });
 
-    console.log(arr1);
+    return arr1;
 };
 
 var curInv = [
@@ -52,4 +56,9 @@ var newInv = [
     [7, "Toothpaste"]
 ];
 
-updateInventory(curInv, newInv);
+console.log(`Array 1:`);
+console.log(curInv);
+console.log(`Array 2:`);
+console.log(newInv);
+console.log(`Updated inventory:`);
+console.log(updateInventory(curInv, newInv));
