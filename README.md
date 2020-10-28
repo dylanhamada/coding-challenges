@@ -135,3 +135,84 @@ If the item name from the second array doesn't match, I add that item to array 1
         return arr1;
     };
 </details>
+
+<details>
+    <summary>No Repeats (Permutations of a String)</summary>
+
+**Challenge**
+
+Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.
+
+**Solution**
+
+My approach is to recursively call a function on a string that swaps two characters in that string. Each recursion, the first character index to be swapped is moved forward one position, much the same way this problem is solved manually using a factorial tree.
+
+When the last index has been reached in the recursive function, it ends.
+
+There are three functions that make up the parent function. The most important is the recursive function that incrementally increases the index for character swapping.
+
+The secondary function is a swapping function that takes a string and two indexes. The third function is one that checks for repeated consecutive characters.
+
+**Code**
+
+    const permAlone = str => {
+        let allPermutations = [];
+        let uniquePermutations = [];
+        let noRepeats = 0;
+
+        const swapFunc = (arr, indOne, indTwo) => {
+            let newArr = [...arr];
+            let temp = newArr[indOne];
+
+            newArr[indOne] = newArr[indTwo];
+            newArr[indTwo] = temp;
+
+            return newArr;
+        };
+
+        const recursivePermute = (str, ind) => {
+            let strArr = str.split('');
+
+            if (ind === (strArr.length - 1)) {
+                allPermutations.push(str);
+                return;
+            }
+
+            for (let i = ind; i < strArr.length; i++) {
+                let newArr = swapFunc(strArr, ind, i);
+                let newStr = newArr.join('');
+                allPermutations.push(newStr);
+                recursivePermute(newStr, ind + 1);
+            }
+        };
+
+        const checkRepeat = str => {
+            let strArr = str.split('');
+            let repeat = false;
+
+            for (let i = 1; i < strArr.length; i++) {
+                if (strArr[i] === strArr[i -1]) {
+                    repeat = true;
+                }
+            }
+
+            return repeat;
+        };
+
+        recursivePermute(str, 0);
+
+        allPermutations.forEach((str, ind, arr) => {
+            if (arr.indexOf(str) === ind) {
+                uniquePermutations.push(str);
+            }
+        });
+
+        uniquePermutations.forEach(str => {
+            if (checkRepeat(str) === false) {
+                noRepeats++;
+            }
+        });
+
+        return noRepeats;
+    };
+</details>
