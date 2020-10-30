@@ -141,7 +141,7 @@ If the item name from the second array doesn't match, I add that item to array 1
 
 **Challenge**
 
-Return the number of total permutations of the provided string that don't have repeated consecutive letters. Assume that all characters in the provided string are each unique.
+Return the number of total permutations of the provided string that don't have repeated consecutive letters.
 
 **Solution**
 
