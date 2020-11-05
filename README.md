@@ -2,6 +2,15 @@
 
 A repo to store JavaScript coding challenges.
 
+## Table of Contents
+
+- [Coding Challenges](#coding-challenges)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Project Status](#project-status)
+  - [Installation and Instructions](#installation-and-instructions)
+  - [Algorithms Challenges](#algorithms-challenges)
+
 ## Introduction
 
 To keep my JavaScript knowledge intact and learn new techniques, I've decided to maintain a repo of JS coding challenges.
@@ -9,15 +18,6 @@ To keep my JavaScript knowledge intact and learn new techniques, I've decided to
 These will primarily cover algorithms and data structures.
 
 Challenges and their solutions are listed below, along with the relevant code. Please refer to the Table of Contents.
-
-## Table of Contents
-
-- [Coding Challenges](#coding-challenges)
-  - [Introduction](#introduction)
-  - [Table of Contents](#table-of-contents)
-  - [Project Status](#project-status)
-  - [Installation and Instructions](#installation-and-instructions)
-  - [Algorithms Challenges](#algorithms-challenges)
 
 ## Project Status
 
