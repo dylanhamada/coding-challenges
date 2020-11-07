@@ -24,6 +24,36 @@ PLAIN LANGUAGE
 
 const pairwise = (arr, arg) => {
     let sum = 0;
+
+    // currArr.forEach((baseNum, baseInd) => {
+    //     currArr.forEach((checkNum, checkInd) => {
+    //         if ((checkNum + baseNum) === arg) {
+    //             if (baseInd !== checkInd) {
+    //                 sum += (baseInd + checkInd);
+    //                 currArr[baseInd] = null;
+    //                 currArr[checkInd] = null;
+    //             }
+    //         }
+    //     });
+    // });
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr.length; j++) {
+            if ((arr[j] + arr[i]) === arg) {
+                if (i !== j) {
+                    console.log(arr);
+                    sum += (i + j);
+                    arr[i] = false;
+                    arr[j] = false;
+                }
+            }
+        }
+    }
     
     return sum;
 };
+
+// console.log(pairwise([1, 4, 2, 3, 0, 5], 7));
+// console.log(pairwise([1, 3, 2, 4], 4));
+// console.log(pairwise([1, 1, 1], 2));
+console.log(pairwise([0, 0, 0, 0, 1, 1], 1));
