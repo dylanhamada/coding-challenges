@@ -12,24 +12,32 @@ at index 0 rather than the 1 at index 1, because 0+2 < 1+2.
 
 // SOLUTION
 
-/*
-PLAIN LANGUAGE
-- create a variable 'sum' to store sum of indices
-- run foreach on array
-    - each iteration, run foreach on array except for current element
-    - check if the two elements add up to the number 'arg'
-    - if yes, add their indices to 'sum'
-    - change their values to string 'used'
-*/
+const prompt = require('../helpers/prompt');
+
+const properties = [
+    {
+        name: 'array'
+    },
+    {
+        name: 'argument'
+    }
+];
 
 const pairwise = (arr, arg) => {
     let sum = 0;
 
+    // Iterate through the array
     for (let i = 0; i < arr.length; i++) {
+        // Within the initial iteration, iterate through the array again
         for (let j = 0; j < arr.length; j++) {
+            /* If the the sum of the initial element and the subsequent element equal "arg", and if neither
+            of the elements are not falsy */
             if ((arr[j] + arr[i]) === arg && (arr[j] !== false) && (arr[i] !== false)) {
+                // If the index of the initial element does not equal the index of the subsequent element
                 if (i !== j) {
+                    // Increase "sum" by the sum of the initial and subsequent elements
                     sum += (i + j);
+                    // Set the initial and subsequent elements in the array to false so they can't be used again
                     arr[i] = false;
                     arr[j] = false;
                 }
@@ -39,9 +47,3 @@ const pairwise = (arr, arg) => {
     
     return sum;
 };
-
-console.log(pairwise([1, 4, 2, 3, 0, 5], 7));
-console.log(pairwise([1, 3, 2, 4], 4));
-console.log(pairwise([1, 1, 1], 2));
-console.log(pairwise([0, 0, 0, 0, 1, 1], 1));
-console.log(pairwise([], 100));
