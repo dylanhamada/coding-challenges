@@ -5,7 +5,7 @@ const funcPrompt = (properties) => {
 
     prompt.get(properties, (err, result) => {
         if (err) { return onErr(err); }
-        return result;
+        console.log(result);
     });
 };
 

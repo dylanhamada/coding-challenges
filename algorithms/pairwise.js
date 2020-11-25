@@ -16,10 +16,12 @@ const prompt = require('../helpers/prompt');
 
 const properties = [
     {
-        name: 'array'
+        name: 'array',
+        description: 'Type in a list of numbers, separated by a comma'
     },
     {
-        name: 'argument'
+        name: 'argument',
+        description: 'Type in a single number'
     }
 ];
 

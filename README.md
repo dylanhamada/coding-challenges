@@ -19,9 +19,13 @@ These will primarily cover algorithms and data structures.
 
 Challenges and their solutions are listed below, along with the relevant code. Please refer to the Table of Contents.
 
+This repo will include a live demo of all coding challenges, complete with a summary of the challenges and solutions.
+
 ## Project Status
 
 This project is ongoing and is updated regularly.
+
+I am currently developing a front-end app to demo these coding challenges.
 
 ## Installation and Instructions
 
