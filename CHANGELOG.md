@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.3] - 2020-11-30
+
+### Added
+
+- Began working on index page for coding challenges repository
+
 ## [0.0.3] - 2020-11-24
 
 ### Added
