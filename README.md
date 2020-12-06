@@ -19,7 +19,7 @@ These will primarily cover algorithms and data structures.
 
 Challenges and their solutions are listed below, along with the relevant code. Please refer to the Table of Contents.
 
-This repo will include a live demo of all coding challenges, complete with a summary of the challenges and solutions.
+This repo will include a live demo of all coding challenges, complete with a summary of the challenges and solutions. It can be viewed [here](https://dylanhamada.github.io/coding-challenges).
 
 ## Project Status
 

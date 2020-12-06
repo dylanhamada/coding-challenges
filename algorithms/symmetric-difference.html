@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <!-- Prism CSS-->
+    <link rel="stylesheet" href="../prism/prism.css">
+    <title>Odds and Ends: Symmetric Difference</title>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4 text-center text-dark">Symmetric Difference</h2>
+    </div>
+    <div class="container mt-5">
+        <h2 class="mb-4">Problem</h2>
+        <p>The mathematical term symmetric difference (△ or ⊕) of two sets is the set of elements which are in
+            either of the two sets but not in both.</p>
+        <p>Create a function that takes two or more arrays and returns an array of their symmetric difference. The
+            returned array must contain only unique values (no duplicates).</p>
+        <a href="https://www.freecodecamp.org/learn/coding-interview-prep/algorithms/find-the-symmetric-difference"
+            target="_blank">
+            <p>View the problem on freeCodeCamp</p>
+        </a>
+    </div>
+    <div class="container mt-5 language-javascript">
+        <h2 class="mb-4">Solution</h2>
+        <p>I use a recursive function to solve this problem. The base case is a function argument that consists of only
+            one array, in which case the function can no longer call itself. I also create a new array,
+            <code>newArr</code>, to store the symmetric difference.</p>
+        <p>If the base case isn't met, the first two arrays passed as an argument are passed into a helper function
+            <code>checkDuplicate</code>, which iterates through the first array and checks if the second array includes
+            the current element of the first array.</p>
+        <p>If not, and if <code>newArr</code> doesn't include the current element, it's pushed into <code>newArr</code>.
+        </p>
+        <p><code>checkDuplicate</code> is run for both the first and second arrays, and then the entire function is
+            called recursively, each time omitting the first two arrays that were originally passed in as arguments.
+            Eventually, only one element is passed in as an argument, and the recursion ends.</p>
+    </div>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+    <!-- Prism JS -->
+    <script src="../prism/prism.js"></script>
+</body>
+
+</html>

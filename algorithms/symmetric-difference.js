@@ -39,8 +39,3 @@ const sym = (...args) => {
     one array is passed in as an argument, thereby being the symmetric difference. */
     return sym(newArr, ...args.slice(2));
 };
-
-console.log("Arrays: [1, 2, 3, 3], [5, 5, 2, 1, 4]");
-console.log("Symmetric Difference: " + sym([1, 2, 3, 3], [5, 5, 2, 1, 4]))
-console.log("Arrays: [1, 2, 3, 3], [5, 1, 2, 1, 4], [6, 7, 8], [9, 10, 6, 7, 8, 11]");
-console.log("Symmetric Difference: " + sym([1, 2, 3, 3], [5, 1, 2, 1, 4], [6, 7, 8], [9, 10, 6, 7, 8, 11]))
